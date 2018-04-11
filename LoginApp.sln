@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27428.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginApp", "LoginApp\LoginApp.csproj", "{4AE77FD7-EB44-4384-A781-9AAE6D8ED369}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginApp.Features.Test", "LoginApp.Features.Test\LoginApp.Features.Test.csproj", "{DC25EFFC-B9D9-4A65-9BE5-914A417DE021}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginApp.Features", "LoginApp.Features\LoginApp.Features.csproj", "{41D0061F-974E-46EF-84D5-9C05A3469A80}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +21,14 @@ Global
 		{4AE77FD7-EB44-4384-A781-9AAE6D8ED369}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AE77FD7-EB44-4384-A781-9AAE6D8ED369}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4AE77FD7-EB44-4384-A781-9AAE6D8ED369}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{DC25EFFC-B9D9-4A65-9BE5-914A417DE021}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC25EFFC-B9D9-4A65-9BE5-914A417DE021}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC25EFFC-B9D9-4A65-9BE5-914A417DE021}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC25EFFC-B9D9-4A65-9BE5-914A417DE021}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41D0061F-974E-46EF-84D5-9C05A3469A80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41D0061F-974E-46EF-84D5-9C05A3469A80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41D0061F-974E-46EF-84D5-9C05A3469A80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41D0061F-974E-46EF-84D5-9C05A3469A80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
