@@ -22,7 +22,7 @@ namespace LoginApp.Features.Test
         [Fact]
         public void Login_Call_Busy_Method_2_Times()
         {
-            _sut.Login("asdas", "asdas");
+            _sut.Login(GetValidUser().Key, GetValidUser().Value));
 
             _view.Verify(m => m.Busy(true), Times.Once);
             _view.Verify(m => m.Busy(false), Times.Once);
