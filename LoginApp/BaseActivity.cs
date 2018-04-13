@@ -3,7 +3,7 @@ using Android.Support.V7.App;
 
 namespace LoginApp
 {
-    public class BaseActivity: AppCompatActivity
+    public class BaseActivity : AppCompatActivity
     {
         public void Busy(bool value = true)
         {

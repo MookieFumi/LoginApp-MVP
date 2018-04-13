@@ -29,7 +29,9 @@ namespace LoginApp.Features.Login
         {
             var viewHolder = holder as LastUserViewHolder;
 
-            var relocationItem = _users.ElementAt(position);
+            var user = _users.ElementAt(position);
+
+            viewHolder.Name.Text = user.Key;
             viewHolder.Image.SetImageResource(Resource.Drawable.ic_profile);
         }
 

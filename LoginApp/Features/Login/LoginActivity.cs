@@ -5,12 +5,20 @@ using Acr.UserDialogs;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using Android.Support.V7.Widget;
+using Android.Content;
+using Firebase.Messaging;
+using Firebase.Iid;
+using Android.Util;
+using Android.Gms.Common;
+using Android.Gms.Common;
 
 namespace LoginApp.Features.Login
 {
     [Activity(Label = "LoginApp", MainLauncher = true)]
     public class LoginActivity : BaseActivity, ILoginView
     {
+        const string TAG = "MainActivity";
+
         private LoginPresenter _presenter;
         private EditText _usernameEditText;
         private EditText _passwordEditText;
@@ -39,6 +47,14 @@ namespace LoginApp.Features.Login
             SetupRecyclerView();
 
             BindUiActions();
+
+            CheckGooglePlayServices();
+
+            var logTokenButton = FindViewById<Button>(Resource.Id.logTokenButton);
+            logTokenButton.Click += delegate {
+                Log.Debug(TAG, "InstanceID token: " + FirebaseInstanceId.Instance.Token);
+                ShowToast(FirebaseInstanceId.Instance.Token);
+            };
         }
 
         protected override void OnSaveInstanceState(Bundle outState)
@@ -124,5 +140,30 @@ namespace LoginApp.Features.Login
             _recyclerView.SetAdapter(_adapter);
         }
 
+        public void GoToMain()
+        {
+            var intent = new Intent(this, typeof(MainActivity));
+            StartActivity(intent);
+        }
+
+        public bool CheckGooglePlayServices()
+        {
+            int resultCode = GoogleApiAvailability.Instance.IsGooglePlayServicesAvailable(this);
+            if (resultCode != ConnectionResult.Success)
+            {
+                if (GoogleApiAvailability.Instance.IsUserResolvableError(resultCode))
+                    ShowToast(GoogleApiAvailability.Instance.GetErrorString(resultCode));
+                else
+                {
+                    ShowToast("This device is not supported");
+                    //Finish();
+                }
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

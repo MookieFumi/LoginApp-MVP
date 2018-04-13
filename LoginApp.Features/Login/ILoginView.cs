@@ -7,6 +7,7 @@ namespace LoginApp.Features.Login
         Task Login(string username, string password);
         void Busy(bool value = true);
         void ShowUserIsNotAllowed();
+        void GoToMain();
     }
 }
 

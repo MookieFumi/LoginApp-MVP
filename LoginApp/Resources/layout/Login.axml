@@ -36,6 +36,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/helpMeButton" />
+    <Button
+      android:id="@+id/logTokenButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_horizontal"
+      android:text="Log Token" />
+  
     <android.support.v7.widget.RecyclerView
         android:id="@+id/lastUsersRecyclerView"
         android:scrollbars="vertical"

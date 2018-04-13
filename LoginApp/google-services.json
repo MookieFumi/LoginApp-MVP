@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "673105387648",
+    "firebase_url": "https://ghost-168fe.firebaseio.com",
+    "project_id": "ghost-168fe",
+    "storage_bucket": "ghost-168fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:673105387648:android:5a49fcbdbf6366c5",
+        "android_client_info": {
+          "package_name": "com.home.mookiefumi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "673105387648-q3s7pc3unbt7m2v2vc7qfq83av80fnbu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDouq3Zhs-6Lhq6g7mDKgotrrV6nCHmiDI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

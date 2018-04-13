@@ -19,12 +19,16 @@ namespace LoginApp.Features.Login
 
             var result = await _accountService.Login(username, password);
 
-            if (!result)
+            _view.Busy(false);
+
+            if (result)
+            {
+                _view.GoToMain();
+            }
+            else
             {
                 _view.ShowUserIsNotAllowed();
             }
-
-            _view.Busy(false);
         }
     }
 }

@@ -8,7 +8,7 @@ namespace LoginApp.Features.Login
         {
             await Task.Delay(1500);
 
-            return string.IsNullOrEmpty(username) || username != password;
+            return !string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password);
         }
     }
 }
