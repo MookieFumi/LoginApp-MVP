@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using Android.Support.V7.Widget;
 using Android.Content;
-using Firebase.Messaging;
 using Firebase.Iid;
+using Firebase.Messaging;
 using Android.Util;
-using Android.Gms.Common;
-using Android.Gms.Common;
+using LoginApp.Infrastructure;
 
 namespace LoginApp.Features.Login
 {
@@ -48,10 +47,19 @@ namespace LoginApp.Features.Login
 
             BindUiActions();
 
-            CheckGooglePlayServices();
+            var result = this.CheckGooglePlayServicesAvailability();
+            if (result.Available)
+            {
+                FirebaseMessaging.Instance.SubscribeToTopic("home");
+            }
+            else
+            {
+                base.ShowToast(result.Reason);
+            }
 
             var logTokenButton = FindViewById<Button>(Resource.Id.logTokenButton);
-            logTokenButton.Click += delegate {
+            logTokenButton.Click += delegate
+            {
                 Log.Debug(TAG, "InstanceID token: " + FirebaseInstanceId.Instance.Token);
                 ShowToast(FirebaseInstanceId.Instance.Token);
             };
@@ -144,26 +152,6 @@ namespace LoginApp.Features.Login
         {
             var intent = new Intent(this, typeof(MainActivity));
             StartActivity(intent);
-        }
-
-        public bool CheckGooglePlayServices()
-        {
-            int resultCode = GoogleApiAvailability.Instance.IsGooglePlayServicesAvailable(this);
-            if (resultCode != ConnectionResult.Success)
-            {
-                if (GoogleApiAvailability.Instance.IsUserResolvableError(resultCode))
-                    ShowToast(GoogleApiAvailability.Instance.GetErrorString(resultCode));
-                else
-                {
-                    ShowToast("This device is not supported");
-                    //Finish();
-                }
-                return false;
-            }
-            else
-            {
-                return true;
-            }
         }
     }
 }

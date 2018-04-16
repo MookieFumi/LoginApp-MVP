@@ -3,7 +3,7 @@ using Android.Content;
 using Android.Util;
 using Firebase.Iid;
 
-namespace LoginApp
+namespace LoginApp.Infrastructure
 {
     [Service]
     [IntentFilter(new[] { "com.google.firebase.INSTANCE_ID_EVENT" })]

@@ -2,13 +2,13 @@
 
 ¿Qué tiene "interesante" este repo?
 
-* Patrón ViewHolder en el RecyclerView.
+* **Patrón ViewHolder en el RecyclerView**
 
 Es una forma de reutilizar vistas en el uso de listas, fundamentalmente ya que evitamos el uso de FindViewBy que es bastante costoso. Es decir, es un patrón para mejorar el rendimiento.
 
 > Mantenemos una referencia a los elementos de la lista mientras se hace scroll.
 
-* **Patrón MVP** Android
+* **Patrón MVP**
 
 > Model View Presenter. Es un patrón utilizado para organizar nuestra capa de presentación. 
 
@@ -50,6 +50,14 @@ public void Not_Allowed_Login_Calls_ShowUserIsNotAllowed_Method()
     _view.Verify(m => m.ShowUserIsNotAllowed(), Times.Once);
 }
 ```
+
+* **Notificaciones push**
+
+Hay que diferenciar entre mensajes notificación (*manejados automáticamente por el SDK de FCM*) y mensajes de datos (*manejados por la app cliente*).
+
+> Si la app está cerrada o está en segundo plano FCM mostrará la notificación. Si quieres personalizarla debes especificar configuration en el manifiesto o en la llamada a la API <https://firebase.google.com/docs/cloud-messaging/android/client#manifest>
+
+> Si la app está en primer plano FCM llamará a la función onMessageReceived()
 
 * En el diseño de layout se ha utilizado Tools para poder tener una **previsualización de nuestra lista, y sus elementos** en tiempo de diseño. ¿Cómo se consigue esto?
 

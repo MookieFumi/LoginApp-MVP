@@ -5,7 +5,7 @@ using Firebase.Messaging;
 using LoginApp.Features.Login;
 using System.Collections.Generic;
 
-namespace LoginApp
+namespace LoginApp.Infrastructure
 {
     [Service]
     [IntentFilter(new[] { "com.google.firebase.MESSAGING_EVENT" })]
@@ -27,6 +27,7 @@ namespace LoginApp
             {
                 intent.PutExtra(key, data[key]);
             }
+
             var pendingIntent = PendingIntent.GetActivity(this, 0, intent, PendingIntentFlags.OneShot);
 
             var notificationBuilder = new Notification.Builder(this)
